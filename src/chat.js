@@ -23,11 +23,19 @@ var responses = [
 
 function minionResponse() {
 	var randomInt = Math.floor(Math.random() * responses.length);
-	alert(responses[randomInt]);
+	return responses[randomInt];
 }
 
-$(document).keypress(function(e) {
+function myFunction()
+{
+	$(document).keypress(function(e) {
 	if(e.which == 13) {
-		minionResponse();
+		var reply = minionResponse();
+		document.getElementById("reply").innerHTML=reply;
 	}
 });
+};
+
+myFunction();
+
+
